@@ -1,0 +1,14 @@
+{
+  "name": "puppet-drupal",
+  "version": "0.1.0",
+  "author": "edina",
+  "summary": "Simple drupal setup for drupal",
+  "license": "Apache 2.0",
+  "source": "git@github.com:edina/puppet-drupal.git",
+  "project_page": "git@github.com:edina/puppet-drupal.git",
+  "issues_url": "https://github.com/edina/puppet-drupal/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
