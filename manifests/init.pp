@@ -23,17 +23,12 @@
 #
 #
 #
-class drupal($root_dir = '/var/www') {
-  include [drush, php]
-
-  $site_name = 'drupal'
-  $drupal_dir = "$root_dir/$site_name"
-
-  contain drupal::packages
-
-  exec { "download_drupal":
-    command => "/usr/local/bin/drush dl --destination=$root_dir --drupal-project-rename=$site_name --yes",
-    creates => "$drupal::drupal_dir/README.txt",
-    logoutput => true,
-  }
+class drupal {
+  include drupal::params
+  include drupal::mysql
+  include php
+  include drush
+  include drupal::dependencies
+  include drupal::install             
+  include drupal::httpd
 }
