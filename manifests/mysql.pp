@@ -13,6 +13,9 @@
 #    class { 'drupal::mysql': }
 #
 class drupal::mysql {
+  # set up mysql
+  class { '::mysql::client': }
+
   # create DB for drupal
   mysql::db { 'drupal_db':
     dbname   => hiera('drupal::db_name'),
